@@ -1,4 +1,4 @@
-client.credentials.file: ebay-config.yaml
+client.credentials.file: ./ebay-config.yaml
 environment: PRODUCTION
 endpoint: http://localhost:8080/webhook
 verificationToken: 71745723-d031-455c-bfa5-f90d11b4f20a
