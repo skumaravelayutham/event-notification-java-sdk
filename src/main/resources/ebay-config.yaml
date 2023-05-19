@@ -1,0 +1,14 @@
+name: ebay-config
+
+# UPDATE the values in this file for the appropriate environment. Required to fetch PublicKey for integrity check.
+api.sandbox.ebay.com:
+    appid: 
+    certid: 
+    devid: 
+    redirecturi: 
+
+api.ebay.com:
+    appid: seethaku-skumarav-PRD-813fa3adc-f0dd5fb8
+    certid: PRD-13fa3adcd9c5-1633-4234-8675-6688
+    devid: b5487dad-2325-4954-aa09-52bb6490bc0c
+    redirecturi: 
