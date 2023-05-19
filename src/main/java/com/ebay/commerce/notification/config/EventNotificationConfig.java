@@ -35,6 +35,7 @@ import org.springframework.context.annotation.Configuration;
 import javax.inject.Inject;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Paths;
 
 @Configuration
 public class EventNotificationConfig
@@ -87,6 +88,7 @@ public class EventNotificationConfig
     private void setOauthClientCredentials() {
         try {
             System.out.println("clientCredentialFilePath is " + clientCredentialFilePath);
+            System.out.println("currentFolderPath:" + Paths.get("").toAbsolutePath().toString()) ;
             CredentialUtil.load(new FileInputStream(clientCredentialFilePath));
 
         } catch (IOException e) {
