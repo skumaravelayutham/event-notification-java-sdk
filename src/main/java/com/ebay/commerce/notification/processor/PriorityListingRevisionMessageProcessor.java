@@ -28,16 +28,28 @@ public class PriorityListingRevisionMessageProcessor extends BaseMessageProcesso
     protected void processInternal(Object data) {
         PriorityListingRevisionData priorityListingRevisionData = (PriorityListingRevisionData) data;
         // do something with the correctly serialized data for this topic.
-        System.out.println("itemId:"+priorityListingRevisionData.getItemId());
-        System.out.println("primaryItemGroupId:"+priorityListingRevisionData.getPrimaryItemGroupId());
-        System.out.println("listingMarketplaceId:"+priorityListingRevisionData.getListingMarketplaceId());
-        System.out.println("categoryId:"+priorityListingRevisionData.getCategoryId());
-        System.out.println("metaCategoryId:"+priorityListingRevisionData.getMetaCategoryId());
-        if(priorityListingRevisionData.getSeller() != null){
-            System.out.println("userId:"+priorityListingRevisionData.getSeller().getUserId());
-            System.out.println("userName:"+priorityListingRevisionData.getSeller().getUserName());
-        }
-        System.out.println("priorityListing:"+priorityListingRevisionData.getPriorityListing());
+//        System.out.println("itemId:"+priorityListingRevisionData.getItemId());
+//        System.out.println("primaryItemGroupId:"+priorityListingRevisionData.getPrimaryItemGroupId());
+//        System.out.println("listingMarketplaceId:"+priorityListingRevisionData.getListingMarketplaceId());
+//        System.out.println("categoryId:"+priorityListingRevisionData.getCategoryId());
+//        System.out.println("metaCategoryId:"+priorityListingRevisionData.getMetaCategoryId());
+//        if(priorityListingRevisionData.getSeller() != null){
+//            System.out.println("userId:"+priorityListingRevisionData.getSeller().getUserId());
+//            System.out.println("userName:"+priorityListingRevisionData.getSeller().getUserName());
+//        }
+//        System.out.println("priorityListing:"+priorityListingRevisionData.getPriorityListing());
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("Data=> {\n");
+        sb.append("    itemId: ").append(priorityListingRevisionData.getItemId()).append("\n");
+        sb.append("    primaryItemGroupId: ").append(priorityListingRevisionData.getPrimaryItemGroupId()).append("\n");
+        sb.append("    listingMarketplaceId: ").append(priorityListingRevisionData.getListingMarketplaceId()).append("\n");
+        //sb.append("    seller: ").append(toIndentedString(seller)).append("\n");
+        sb.append("    categoryId: ").append(priorityListingRevisionData.getCategoryId()).append("\n");
+        sb.append("    metaCategoryId: ").append(priorityListingRevisionData.getMetaCategoryId()).append("\n");
+        sb.append("    priorityListing: ").append(priorityListingRevisionData.getPriorityListing()).append("\n");
+        sb.append("}");
+        System.out.println(sb.toString());
 
     }
 
