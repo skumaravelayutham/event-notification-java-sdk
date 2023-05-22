@@ -71,7 +71,7 @@ public class EventNotificationController {
         try {
             if (signatureValidator.validate(message, signatureHeader)) {
                 process(message);
-                System.out.println("Message processed successfully for topic:" + message.getMetadata().getTopic() + " notificationId:" + message.getNotification().getNotificationId());
+                //System.out.println("Message processed successfully for topic:" + message.getMetadata().getTopic() + " notificationId:" + message.getNotification().getNotificationId());
                 return ResponseEntity.noContent().build();
             } else {
                 return ResponseEntity.status(HttpStatus.PRECONDITION_FAILED).build();
