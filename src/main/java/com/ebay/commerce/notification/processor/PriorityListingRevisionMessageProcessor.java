@@ -33,7 +33,7 @@ public class PriorityListingRevisionMessageProcessor extends BaseMessageProcesso
         System.out.println("listingMarketplaceId:"+priorityListingRevisionData.getListingMarketplaceId());
         System.out.println("categoryId"+priorityListingRevisionData.getCategoryId());
         System.out.println("metaCategoryId:"+priorityListingRevisionData.getMetaCategoryId());
-        if(priorityListingRevisionData.getSeller() ! = null){
+        if(priorityListingRevisionData.getSeller() != null){
             System.out.println("userId"+priorityListingRevisionData.getSeller().getUserId());
             System.out.println("userName:"+priorityListingRevisionData.getSeller().getUserName());
         }
