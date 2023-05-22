@@ -29,12 +29,12 @@ public class PriorityListingRevisionMessageProcessor extends BaseMessageProcesso
         PriorityListingRevisionData priorityListingRevisionData = (PriorityListingRevisionData) data;
         // do something with the correctly serialized data for this topic.
         System.out.println("itemId:"+priorityListingRevisionData.getItemId());
-        System.out.println("primaryItemGroupId"+priorityListingRevisionData.getPrimaryItemGroupId());
+        System.out.println("primaryItemGroupId:"+priorityListingRevisionData.getPrimaryItemGroupId());
         System.out.println("listingMarketplaceId:"+priorityListingRevisionData.getListingMarketplaceId());
-        System.out.println("categoryId"+priorityListingRevisionData.getCategoryId());
+        System.out.println("categoryId:"+priorityListingRevisionData.getCategoryId());
         System.out.println("metaCategoryId:"+priorityListingRevisionData.getMetaCategoryId());
         if(priorityListingRevisionData.getSeller() != null){
-            System.out.println("userId"+priorityListingRevisionData.getSeller().getUserId());
+            System.out.println("userId:"+priorityListingRevisionData.getSeller().getUserId());
             System.out.println("userName:"+priorityListingRevisionData.getSeller().getUserName());
         }
         System.out.println("priorityListing:"+priorityListingRevisionData.getPriorityListing());
