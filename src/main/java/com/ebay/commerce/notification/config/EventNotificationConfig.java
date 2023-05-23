@@ -87,8 +87,6 @@ public class EventNotificationConfig
 
     private void setOauthClientCredentials() {
         try {
-            System.out.println("clientCredentialFilePath is " + clientCredentialFilePath);
-            System.out.println("currentFolderPath:" + Paths.get("").toAbsolutePath().toString()) ;
             CredentialUtil.load(new FileInputStream(clientCredentialFilePath));
 
         } catch (IOException e) {

@@ -63,7 +63,6 @@ public class PublicKeyClient {
         com.ebay.api.client.auth.oauth2.model.Environment authEnvironment = environment == Environment.SANDBOX ? com.ebay.api.client.auth.oauth2.model.Environment.SANDBOX :
                 com.ebay.api.client.auth.oauth2.model.Environment.PRODUCTION;
         Optional<AccessToken> accessToken = oAuthClient.getApplicationToken(authEnvironment, Constants.APPLICABLE_SCOPES).getAccessToken();
-       // Optional<AccessToken> accessToken = oAuthClient.getApplicationToken(authEnvironment, Constants.APPLICABLE_SCOPES).getAccessToken();
         if (accessToken.isPresent()) return ClientConstants.BEARER + accessToken.get().getToken();
         throw new OAuthTokenException("Retrieval of token failed for " + environment.name());
     }

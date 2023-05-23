@@ -47,11 +47,6 @@ public class EventNotificationController {
     @Inject
     private EndpointValidator endpointValidator;
 
-    @GetMapping("/")
-    public String hello() {
-        return "Hello world!";
-    }
-
     @GetMapping("/webhook")
     public ResponseEntity validate(@RequestParam("challenge_code") String challengeCode) {
         if (challengeCode == null) return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
@@ -85,5 +80,4 @@ public class EventNotificationController {
     private void process(Message message) throws JsonProcessingException {
         processorFactory.getProcessor(TopicEnum.valueOf(message.getMetadata().getTopic())).process(message);
     }
-
 }
