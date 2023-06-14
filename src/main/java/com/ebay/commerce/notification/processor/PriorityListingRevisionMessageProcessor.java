@@ -16,6 +16,7 @@
 
 package com.ebay.commerce.notification.processor;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.openapitools.client.model.PriorityListingRevisionData;
 
 public class PriorityListingRevisionMessageProcessor extends BaseMessageProcessor {
@@ -25,19 +26,16 @@ public class PriorityListingRevisionMessageProcessor extends BaseMessageProcesso
     }
 
     @Override
-    protected void processInternal(Object data) {
+    protected void processInternal(Object data) throws JsonProcessingException {
+        //ObjectMapper mapper = new ObjectMapper();
+        // convert user object to json string and return it
+//        String priorityListingRevisionData = mapper.writeValueAsString(data);
+//        System.out.println(priorityListingRevisionData);
         PriorityListingRevisionData priorityListingRevisionData = (PriorityListingRevisionData) data;
-        // do something with the correctly serialized data for this topic.
         StringBuilder sb = new StringBuilder();
-        sb.append("Data=> {\n");
-        sb.append("    itemId: ").append(priorityListingRevisionData.getItemId()).append("\n");
-        sb.append("    primaryItemGroupId: ").append(priorityListingRevisionData.getPrimaryItemGroupId()).append("\n");
-        sb.append("    listingMarketplaceId: ").append(priorityListingRevisionData.getListingMarketplaceId()).append("\n");
-        sb.append("    seller: ").append(priorityListingRevisionData.getSeller().toString()).append("\n");
-        sb.append("    categoryId: ").append(priorityListingRevisionData.getCategoryId()).append("\n");
-        sb.append("    metaCategoryId: ").append(priorityListingRevisionData.getMetaCategoryId()).append("\n");
-        sb.append("    priorityListing: ").append(priorityListingRevisionData.getPriorityListing()).append("\n");
-        sb.append("}");
+        sb.append("Data=>");
+        sb.append("itemId: ").append(priorityListingRevisionData.getItemId());
+        sb.append(",priorityListing: ").append(priorityListingRevisionData.getPriorityListing());
         System.out.println(sb.toString());
     }
 }
